@@ -1,0 +1,28 @@
+<section class="header">
+	<h1> Add User</h1>
+</section>
+<section class="add-user-form">
+	<div>
+		<div class="form-group">
+			<label for="email">Email :</label>
+        <input 
+          type="email" 
+          id="email" 
+          [(ngModel)]="newUser.email"
+          required>
+      <div *ngIf="formStatus.email.error">{{formStatus.email.errorMsg}}</div>
+      </div>
+
+      <div class="form-group">
+        <label for="username">Username :</label>
+        <input 
+          type="text" 
+          id="username" 
+          [(ngModel)]="newUser.username"
+          required>
+            <div *ngIf="formStatus.username.error">{{formStatus.username.errorMsg}}</div>
+      </div>
+      <button class="btn btn-success" 
+      (click)="addHandler()">Submit</button>
+    </div>
+</section>
